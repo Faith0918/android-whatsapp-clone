@@ -31,17 +31,19 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView AlreadyHaveAccountLink;
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mDB;
     private DatabaseReference RootRef;
 
     private ProgressDialog loadingBar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        mDB = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
-        Log.d(TAG, mAuth+"mAuth");
         RootRef = FirebaseDatabase.getInstance().getReference();
 
         initializeFields();
@@ -83,6 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+//                            Log.d("task user name : ",task.toString());
                             if (task.isSuccessful())
                             {
                                 String currentUserID = mAuth.getCurrentUser().getUid();

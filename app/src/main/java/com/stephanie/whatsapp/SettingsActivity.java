@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -124,7 +125,7 @@ public class SettingsActivity extends AppCompatActivity {
                 loadingBar.setCanceledOnTouchOutside(false);
                 loadingBar.show();
 
-                Uri resultUri = result.getUri();
+                final Uri resultUri = result.getUri();
 
                 StorageReference filePath = UserProfileImagesRef.child(currentUserID + ".jpg");
 
@@ -133,8 +134,9 @@ public class SettingsActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(SettingsActivity.this, "Profile Image uploaded successfully.", Toast.LENGTH_SHORT).show();
-
-                            final String downloadUrl = task.getResult().getDownloadUrl().toString();
+//                            Log.d("result", String.valueOf(resultUri));
+//                            Log.d("task",task.toString());
+                            final String downloadUrl = task.getResult().getMetadata().getReference().getDownloadUrl().toString();
                             RootRef.child("Users").child(currentUserID).child("image")
                                     .setValue(downloadUrl)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
