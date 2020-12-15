@@ -1,13 +1,13 @@
 package com.stephanie.whatsapp;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import android.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,7 +84,7 @@ public class ChatActivity extends AppCompatActivity {
         ChatToolBar = findViewById(R.id.chat_toolbar);
         setSupportActionBar(ChatToolBar);
 
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
 

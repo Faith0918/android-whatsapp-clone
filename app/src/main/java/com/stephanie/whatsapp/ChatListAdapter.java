@@ -1,6 +1,5 @@
 package com.stephanie.whatsapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
@@ -11,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class ChatListAdapter extends BaseAdapter {
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
     private DatabaseReference mDatabaseReference;
     private String mDisplayName;
     private ArrayList<DataSnapshot> mSnapshotList;
@@ -53,7 +54,7 @@ public class ChatListAdapter extends BaseAdapter {
         }
     };
 
-    public ChatListAdapter(Activity activity, DatabaseReference ref, String name) {
+    public ChatListAdapter(AppCompatActivity activity, DatabaseReference ref, String name) {
         mActivity = activity;
         mDisplayName = name;
         mDatabaseReference = ref.child("messages");

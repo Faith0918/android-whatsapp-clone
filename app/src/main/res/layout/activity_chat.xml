@@ -40,7 +40,7 @@
             android:id="@+id/send_message_btn"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/send_message"/>
+            app:srcCompat="@drawable/send_message"/>
         
     </LinearLayout>
 

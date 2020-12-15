@@ -27,7 +27,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/top_login_bg" />
+                app:srcCompat="@drawable/top_login_bg" />
 
             <TextView
                 android:id="@+id/need_new_account_link"
