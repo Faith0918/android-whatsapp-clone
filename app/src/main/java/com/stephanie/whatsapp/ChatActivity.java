@@ -2,7 +2,8 @@ package com.stephanie.whatsapp;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
-import android.app.ActionBar;
+//import android.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -84,7 +85,7 @@ public class ChatActivity extends AppCompatActivity {
         ChatToolBar = findViewById(R.id.chat_toolbar);
         setSupportActionBar(ChatToolBar);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
 
