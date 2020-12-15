@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.github.tlaabs.timetableview.Schedule;
+
 public class TabsAccessorAdapter extends FragmentPagerAdapter{
 
     public TabsAccessorAdapter(FragmentManager fm) {
@@ -16,16 +18,15 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter{
 
         switch (i) {
             case 0:
-                return new ChatsFragment();
-
-            case 1:
-                return new GroupsFragment();
-
-            case 2:
                 return new ContactsFragment();
 
-            case 3:
-                return new RequestFragment();
+
+            case 1:
+                return new ChatsFragment();
+
+            case 2:
+                return new ScheduleFragment();
+
 
             default:
                 return null;
@@ -37,16 +38,14 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter{
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "Chats";
+                return "Friends";
 
             case 1:
-                return "Groups";
+                return "Chats";
 
             case 2:
-                return "Contacts";
+                return "Schedule";
 
-            case 3:
-                return "Requests";
 
             default:
                 return null;
@@ -55,6 +54,6 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter{
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 }

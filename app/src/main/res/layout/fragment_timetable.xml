@@ -17,4 +17,5 @@
         app:header_highlight_image_size="36dp"
         app:header_highlight_type="image"
         tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

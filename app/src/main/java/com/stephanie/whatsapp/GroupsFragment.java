@@ -47,7 +47,6 @@ public class GroupsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        groupFragmentView = inflater.inflate(R.layout.fragment_groups, container, false);
 
         GroupRef = FirebaseDatabase.getInstance().getReference().child("Groups");
         initializeFields();
