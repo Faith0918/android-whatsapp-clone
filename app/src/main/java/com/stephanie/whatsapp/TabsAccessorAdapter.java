@@ -27,7 +27,6 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter{
             case 2:
                 return new ScheduleFragment();
 
-
             default:
                 return null;
         }
